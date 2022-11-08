@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { Coiny } from '@next/font/google'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 const coinyFont = Coiny({
   weight: "400",
