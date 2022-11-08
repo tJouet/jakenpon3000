@@ -4,6 +4,7 @@ import '../styles/globals.scss'
 
 const coinyFont = Coiny({
   weight: "400",
+  subsets: ['latin']
 })
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -4,7 +4,8 @@ import {Text} from "@components/Text";
 export default function Home() {
   return (
     <div>
-      <Text>Hello from text</Text>
+      <Text fontSize={"48px"} >JAKENPON</Text>
+      <Text fontSize={"48px"} >3000</Text>
     </div>
   )
 }
