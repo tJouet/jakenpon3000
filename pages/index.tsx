@@ -1,10 +1,10 @@
 import React from "react";
-import {Button} from "@components/Button";
+import {Text} from "@components/Text";
 
 export default function Home() {
   return (
     <div>
-      <Button>HELLO FROM BUTTON</Button>
+      <Text>Hello from text</Text>
     </div>
   )
 }
