@@ -1,3 +1,4 @@
+import * as React from "react"
 import type { AppProps } from 'next/app'
 import { Coiny } from '@next/font/google'
 import '../styles/globals.scss'
@@ -9,7 +10,7 @@ const coinyFont = Coiny({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={coinyFont.className}>
+    <main className={coinyFont.className} >
       <Component {...pageProps} />
     </main>
   )

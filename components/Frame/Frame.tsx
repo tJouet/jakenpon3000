@@ -6,7 +6,8 @@ export interface FrameProps extends React.HTMLAttributes<HTMLParagraphElement> {
     children: React.ReactNode;
   }
 
-export const Frame: React.FC<FrameProps> = ({children, ...props}: FrameProps) => {
-    return 
-    <div className={styles.frame}{...props}> {children} </div>
+const Frame = ({children, ...props}: FrameProps) => {
+    return ( <div className={styles.frame}{...props}> {children} </div>)
 }
+
+export default Frame

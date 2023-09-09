@@ -1,0 +1,13 @@
+.input {
+    border-radius: 99px;
+    padding: 12px 20px;
+    width: 70%;
+    background-color: aliceblue;
+    font-size: 22px;
+    border: 0px;
+};
+
+.input::placeholder {
+    color: #bdbdbd;
+    //TO DO Put the same font as place holder
+}
