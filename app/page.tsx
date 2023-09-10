@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import {BannerCircleMenu} from "../public";
-import {Button, Frame, Input, Text} from "@components/index";
+import {Button, Frame, Input} from "@components/index";
 import {useRouter} from "next/navigation";
 
 
@@ -12,21 +12,16 @@ const MainPage: React.FC = () => {
         router.push('/about')
     }
 
-    return <Frame style={{
-        padding: "40px",
-        backgroundColor: "rgb(84, 140, 243)",
-        height: "100vh",
-        justifyContent: "space-between"
-    }}>
+    return <Frame className={'bg-primaryBlue p-40 h-screen flex flex-col justify-between items-center'}>
         <Image src={BannerCircleMenu} alt={"Banner jakenpon"}/>
         <Frame style={{flexDirection: 'row'}}>
-            <Text fontSize={"60px"}>JAKENPON</Text>
+            <p className={'text-60 text-white'}>JAKENPON</p>
             {/*Why does this font size doesn't work but the one in Text.module.css does?*/}
-            <Text fontSize={"3px"} style={{paddingBottom: "55px"}}>3000</Text>
+            <p className={'text-3 pb-[55px]'}>3000</p>
         </Frame>
         <Input placeholder="Set your nickname"/>
         <Button onClick={onclick}>
-            <Text fontSize={"60px"}>Play!</Text>
+            <p className={'text-60'}>Play!</p>
         </Button>
     </Frame>
 }

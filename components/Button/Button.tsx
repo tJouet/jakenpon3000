@@ -1,5 +1,4 @@
 import React from "react";
-import styles from './Button.module.scss'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick : () => void;
@@ -7,7 +6,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const Button: React.FC<ButtonProps> = ({children, onClick}) => {
-  return <button className={styles.button} onClick={onClick}>{children}</button>
+  return <button className={'w-[80%] text-white bg-primaryYellow rounded-[90px] border-0 py-20 shadow-button'} onClick={onClick}>{children}</button>
 }
 
 export default Button
