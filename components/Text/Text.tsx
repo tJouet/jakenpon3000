@@ -6,8 +6,10 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   fontSize: string;
 }
 
-export const Text: React.FC<TextProps> = ({children,fontSize="60px" ,...props}) => {
+const Text: React.FC<TextProps> = ({children,fontSize="60px" ,...props}) => {
   return <p className={styles.text} style={{fontSize}}{...props} >
     {children}
   </p>
 }
+
+export default Text
