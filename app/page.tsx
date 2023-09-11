@@ -8,7 +8,7 @@ import {useRouter} from "next/navigation";
 
 const MainPage: React.FC = () => {
 
-    const router = useRouter()
+    //const router = useRouter()
 
     const Test = () => {
         console.log("hello this is a test")
@@ -21,9 +21,10 @@ const MainPage: React.FC = () => {
             <p className={'text-[20px] text-white'}>3000</p>
         </div>
         <Input placeholder="Set your nickname"/>
-        <Button onClick={() => (console.log("This works"))}>
+        <Button onClick={() => (console.log("This is the console log of the comp in the page"))}>
             <p className={'text-60 drop-shadow-text text-secondaryBlue'}>Play!</p>
         </Button>
+        <button className={"p-20 bg-white"} onClick={() => console.log("this is the html balise")}></button>
     </Frame>
 }
 
