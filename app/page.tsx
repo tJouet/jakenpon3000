@@ -9,19 +9,19 @@ import {useRouter} from "next/navigation";
 const MainPage: React.FC = () => {
 
     const router = useRouter()
-    const onclick = () => {
-        console.log('test')
-        router.push('/about/page')
+
+    const Test = () => {
+        console.log("hello this is a test")
     }
 
     return <Frame className={'bg-gradient-to-t from-primaryBlue via-secondaryBlue to-primaryBlue p-40 h-screen flex flex-col justify-between items-center'}>
-        <Image src={BannerCircleMenu} alt={"Banner jakenpon"} className={styles.imgSpin}/>
+        <Image src={BannerCircleMenu} alt={"Banner jakenpon"} />
         <div className={"flex flex-row"}>
             <p className={'text-[60px] text-white drop-shadow-button' }>JAKENPON</p>
             <p className={'text-[20px] text-white'}>3000</p>
         </div>
         <Input placeholder="Set your nickname"/>
-        <Button onClick={onclick}>
+        <Button onClick={() => (console.log("This works"))}>
             <p className={'text-60 drop-shadow-text text-secondaryBlue'}>Play!</p>
         </Button>
     </Frame>
