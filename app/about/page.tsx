@@ -1,8 +1,15 @@
+'use client'
+import React, {useContext} from "react";
 import Link from "next/link";
+import GameContext from "@components/appContext";
 
 export default function About() {
-    return <h2>
-        Hello from about
-        <Link href={'/about/coucou'} >GO TO Coucou</Link>
+
+    const gameContext = useContext(GameContext)
+
+    return(
+     <h2>
+        Hello from about {gameContext.username} 
     </h2>
+    )
 }
