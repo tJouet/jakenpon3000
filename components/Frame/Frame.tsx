@@ -7,7 +7,7 @@ export interface FrameProps extends React.HTMLAttributes<HTMLParagraphElement> {
   }
 
 const Frame = ({children, ...props}: FrameProps) => {
-    return ( <div className={styles.frame}{...props}> {children} </div>)
+    return ( <div className={' text-white bg-gradient-to-t from-primaryBlue via-secondaryBlue to-primaryBlue p-40 h-screen flex flex-col justify-between items-center'}{...props}> {children} </div>)
 }
 
 export default Frame

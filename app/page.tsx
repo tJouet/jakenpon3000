@@ -27,7 +27,8 @@ const MainPage: React.FC = () => {
         setUsername(e?.currentTarget?.value)
     }
 
-    return <Frame className={'bg-gradient-to-t from-primaryBlue via-secondaryBlue to-primaryBlue p-40 h-screen flex flex-col justify-between items-center'}>
+    return( 
+    <Frame>
         <Image src={BannerCircleMenu} alt={"Banner jakenpon"} className={"animate-[spin_50s_linear_infinite]"}/>
         <div className={"flex flex-row"}>
             <p className={'text-[60px] text-white drop-shadow-button' }>JAKENPON</p>
@@ -37,7 +38,7 @@ const MainPage: React.FC = () => {
         <Button onClick={onclick}>
             <p className={'text-60 drop-shadow-text text-secondaryBlue'}>Play!</p>
         </Button>
-    </Frame>
+    </Frame>)
 }
 
 export default MainPage
