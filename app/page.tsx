@@ -8,15 +8,15 @@ import GameContext from "./appContext";
 
 const MainPage: React.FC = () => {
 
-    const [Username, setUsername] = useState("")
+    const [username, setUsername] = useState("")
     const gameContext = useContext(GameContext)
     const router = useRouter()
 
     const onclick = () => {
-        if (Username.length < 3) {
+        if (username.length < 3) {
            return alert ("Your username must be 3 characters or bigger")
         } else {
-            gameContext.username = Username
+            gameContext.setUsername(username)
             router.push('/play')
         }
         
