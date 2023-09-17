@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { PaperHand,ScissorsHand,RockHand} from "../../public";
 
 export interface HandContProps extends React.HTMLAttributes<HTMLParagraphElement> {
@@ -8,18 +9,15 @@ export interface HandContProps extends React.HTMLAttributes<HTMLParagraphElement
 
 const HandCont = ({sign,isSelected=false}:HandContProps) => {
 
-    const signSelector = (sign:string) => {
-        if (sign === "paper" ) {
-            return <PaperHand/>
-        } else if ( sign === "rock") {
-            return <RockHand/>
-        } else {
-            return <ScissorsHand/>
-        }
+    const  iconsEnums = {
+        'paper': PaperHand,
+        'rock':RockHand,
+        'scissors':ScissorsHand
     }
 
+
     return ( 
-        <p>Coucou</p>
+        <Image src={iconsEnums[sign]} alt={`${sign} hand sign`} className={!isSelected && "opacity-50"} />
     )
 }
 

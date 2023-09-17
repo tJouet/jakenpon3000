@@ -4,7 +4,7 @@ import Image from "next/image";
 import {BannerCircleMenu} from "../public";
 import {Button, Frame, Input} from "@components/index";
 import {useRouter} from "next/navigation";
-import GameContext from "@components/appContext";
+import GameContext from "./appContext";
 
 const MainPage: React.FC = () => {
 
@@ -34,9 +34,10 @@ const MainPage: React.FC = () => {
             <p className={'text-[60px] text-white drop-shadow-button' }>JAKENPON</p>
             <p className={'text-[20px] text-white'}>3000</p>
         </div>
-        <Input placeholder="Set your nickname" onchange={defineUsername}/>
-        <Button onClick={onclick}>
-            <p className={'text-60 drop-shadow-text text-secondaryBlue'}>Play!</p>
+        <div className={'text-black w-[90%] flex justify-center'}>
+        <Input placeholder="Set your nickname" onchange={defineUsername} />
+        </div>
+        <Button onClick={onclick}>Play!
         </Button>
     </Frame>)
 }
