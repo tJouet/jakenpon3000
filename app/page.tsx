@@ -4,17 +4,22 @@ import Image from "next/image";
 import {BannerCircleMenu} from "../public";
 import {Button, Frame, Input} from "@components/index";
 import {useRouter} from "next/navigation";
-import GameContext from "@components/appContext";
+import GameContext from "./appContext";
 
 const MainPage: React.FC = () => {
 
-    const [Username, setUsername] = useState("")
+    const [username, setUsername] = useState("")
     const gameContext = useContext(GameContext)
     const router = useRouter()
 
     const onclick = () => {
-        gameContext.username = Username
-        router.push('/about')
+        if (username.length < 3) {
+           return alert ("Your username must be 3 characters or bigger")
+        } else {
+            gameContext.setUsername(username)
+            router.push('/play')
+        }
+        
     }
 
     const defineUsername = (e:React.FormEvent<HTMLInputElement>) => {
@@ -22,17 +27,19 @@ const MainPage: React.FC = () => {
         setUsername(e?.currentTarget?.value)
     }
 
-    return <Frame className={'bg-gradient-to-t from-primaryBlue via-secondaryBlue to-primaryBlue p-40 h-screen flex flex-col justify-between items-center'}>
-        <Image src={BannerCircleMenu} alt={"Banner jakenpon"}/>
+    return( 
+    <Frame>
+        <Image src={BannerCircleMenu} alt={"Banner jakenpon"} className={"animate-[spin_50s_linear_infinite]"}/>
         <div className={"flex flex-row"}>
             <p className={'text-[60px] text-white drop-shadow-button' }>JAKENPON</p>
             <p className={'text-[20px] text-white'}>3000</p>
         </div>
-        <Input placeholder="Set your nickname" onchange={defineUsername}/>
-        <Button onClick={onclick}>
-            <p className={'text-60 drop-shadow-text text-secondaryBlue'}>Play!</p>
+        <div className={'text-black w-[90%] flex justify-center'}>
+        <Input placeholder="Set your nickname" onchange={defineUsername} />
+        </div>
+        <Button onClick={onclick}>Play!
         </Button>
-    </Frame>
+    </Frame>)
 }
 
 export default MainPage

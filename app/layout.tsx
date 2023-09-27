@@ -1,6 +1,8 @@
+'use client'
 import React, {PropsWithChildren} from "react";
 import '../styles/globals.scss'
 import {Coiny} from "next/font/google";
+import GameContext, {useGameContext} from "./appContext";
 
 const coinyFont = Coiny({
     weight: "400",
@@ -8,6 +10,7 @@ const coinyFont = Coiny({
 })
 
 const AppLayout: React.FC<PropsWithChildren> = ({children}) => {
+    const gameContext = useGameContext()
     return <html lang="en">
     <head>
         <meta charSet="UTF-8"/>
@@ -15,7 +18,9 @@ const AppLayout: React.FC<PropsWithChildren> = ({children}) => {
         <title>Jakenpon</title>
     </head>
     <body className={coinyFont.className}>
-    {children}
+    <GameContext.Provider value={gameContext}>
+        {children}
+    </GameContext.Provider>
     </body>
     </html>
 }
